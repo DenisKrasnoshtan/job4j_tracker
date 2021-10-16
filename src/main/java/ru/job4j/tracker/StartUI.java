@@ -6,6 +6,7 @@ public class StartUI {
         String name = input.askStr("Enter name: ");
         Item item = new Item(name);
         tracker.add(item);
+        System.out.println("Добавленная заявка: " + item);
     }
 
     public static void showAllItems(Input input, Tracker tracker) {
