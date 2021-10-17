@@ -23,7 +23,7 @@ public class StartUITest {
         Item item = new Item("new item");
         tracker.add(item);
         String[] answers = {
-                String.valueOf(item.getId()), /* id сохраненной заявки в объект tracker. */
+                String.valueOf(item.getId()),
                 "replaced item"
         };
         StartUI.editItem(new StubInput(answers), tracker);
