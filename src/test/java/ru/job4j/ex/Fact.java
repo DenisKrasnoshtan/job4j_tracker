@@ -7,7 +7,7 @@ public class Fact {
 
     public int calc(int n) {
         if (n < 0) {
-            throw new IllegalArgumentException("Start should be less than finish.");
+            throw new IllegalArgumentException("метод вызывается с некорректными параметрами");
         }
         int rsl = 1;
         for (int index = 1; index <= n; index++) {
