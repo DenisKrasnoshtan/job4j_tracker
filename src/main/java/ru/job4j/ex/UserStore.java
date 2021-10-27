@@ -19,20 +19,15 @@ public class UserStore {
 
     public static void main(String[] args) {
         User[] users = {
-                new User("Petr Arsentev", true)
+                new User("Petr", false)
         };
-        User user = null;
         try {
-            user = findUser(users, "Petr Arsentev");
-        } catch (UserNotFoundException e) {
-            e.printStackTrace();
-        }
-        try {
+            User user = findUser(users, "Petr");
             if (validate(user)) {
                 System.out.println("This user has an access");
             }
-        } catch (UserInvalidException e) {
-            e.printStackTrace();
+        } catch (UserNotFoundException e) {
+            System.out.println(e.getMessage());
         }
     }
 }
