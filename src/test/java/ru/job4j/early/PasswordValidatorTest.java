@@ -16,6 +16,7 @@ class PasswordValidatorTest {
                 });
         assertThat(exception.getMessage()).isEqualTo("Пустой пароль");
     }
+
     @Test
     public void whenExceptionPswdShortOrLong() {
         IllegalArgumentException exception = assertThrows(
@@ -25,6 +26,7 @@ class PasswordValidatorTest {
                 });
         assertThat(exception.getMessage()).isEqualTo("Длина пароля должна находится в диапазоне [8, 32]");
     }
+
     @Test
     public void whenExceptionPswdIsContainsUpperCaseChar() {
         IllegalArgumentException exception = assertThrows(
@@ -34,6 +36,7 @@ class PasswordValidatorTest {
                 });
         assertThat(exception.getMessage()).isEqualTo("Пароль должен содержать хотя бы один символ в верхнем регистре");
     }
+
     @Test
     public void whenExceptionPswdIsContainsLowerCaseChar() {
         IllegalArgumentException exception = assertThrows(
@@ -43,6 +46,7 @@ class PasswordValidatorTest {
                 });
         assertThat(exception.getMessage()).isEqualTo("Пароль должен содержать хотя бы один символ в нижнем регистре");
     }
+
     @Test
     public void whenExceptionPswdIsContainsDigitChar() {
         IllegalArgumentException exception = assertThrows(
@@ -52,6 +56,7 @@ class PasswordValidatorTest {
                 });
         assertThat(exception.getMessage()).isEqualTo("Пароль должен содержать хотя бы одну цифру");
     }
+
     @Test
     public void whenExceptionPswdIsContainsSpecialChar() {
         IllegalArgumentException exception = assertThrows(
@@ -61,6 +66,7 @@ class PasswordValidatorTest {
                 });
         assertThat(exception.getMessage()).isEqualTo("Пароль должен содержать хотя бы один специальный символ");
     }
+
     @Test
     public void whenExceptionPswdIsContainsSubstring() {
         IllegalArgumentException exception = assertThrows(

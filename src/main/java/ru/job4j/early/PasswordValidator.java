@@ -27,7 +27,8 @@ public class PasswordValidator {
             throw new IllegalArgumentException("Пароль должен содержать хотя бы один специальный символ");
         }
         if (!isNotContainsSubstring(password)) {
-            throw new IllegalArgumentException("Пароль не должен содержать подстроки: qwerty, 12345, password, admin, user");
+            throw new IllegalArgumentException("Пароль не должен содержать подстроки:" +
+                    " qwerty, 12345, password, admin, user");
         }
         return "Valid";
 
