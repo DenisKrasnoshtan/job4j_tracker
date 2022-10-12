@@ -23,8 +23,6 @@ public class BankService {
             }
 
         }
-
-
     }
 
     public User findByPassport(String passport) {

@@ -4,6 +4,8 @@ public class Ball {
     public void tryRun(boolean condition) {
         if (condition) {
             System.out.println("колобок съеден");
-        } else System.out.println("колобок сбежал");
+        } else {
+            System.out.println("колобок сбежал");
+        }
     }
 }

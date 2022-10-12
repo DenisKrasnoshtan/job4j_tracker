@@ -25,7 +25,6 @@ public class Profession {
         return education;
     }
 
-
     public int getBirthday() {
         return birthday;
     }
