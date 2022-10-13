@@ -1,9 +1,6 @@
 package ru.job4j.early;
 
-
-import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
 
 public class PasswordValidator {
 
@@ -15,20 +12,23 @@ public class PasswordValidator {
             throw new IllegalArgumentException("Длина пароля должна находится в диапазоне [8, 32]");
         }
         if (!isContainsUpperCaseChar(password)) {
-            throw new IllegalArgumentException("Пароль должен содержать хотя бы один символ в верхнем регистре");
+            throw new IllegalArgumentException("Пароль должен содержать"
+                    + " хотя бы один символ в верхнем регистре");
         }
         if (!isContainsLowerCaseChar(password)) {
-            throw new IllegalArgumentException("Пароль должен содержать хотя бы один символ в нижнем регистре");
+            throw new IllegalArgumentException("Пароль должен содержать"
+                    + " хотя бы один символ в нижнем регистре");
         }
         if (!isContainsDigitChar(password)) {
             throw new IllegalArgumentException("Пароль должен содержать хотя бы одну цифру");
         }
         if (!isContainsSpecialChar(password)) {
-            throw new IllegalArgumentException("Пароль должен содержать хотя бы один специальный символ");
+            throw new IllegalArgumentException("Пароль должен содержать"
+                    + " хотя бы один специальный символ");
         }
         if (!isNotContainsSubstring(password)) {
-            throw new IllegalArgumentException("Пароль не должен содержать подстроки:" +
-                    " qwerty, 12345, password, admin, user");
+            throw new IllegalArgumentException("Пароль не должен содержать подстроки:"
+                    + " qwerty, 12345, password, admin, user");
         }
         return "Valid";
 

@@ -24,7 +24,8 @@ class PasswordValidatorTest {
                 () -> {
                     PasswordValidator.validate("Adams");
                 });
-        assertThat(exception.getMessage()).isEqualTo("Длина пароля должна находится в диапазоне [8, 32]");
+        assertThat(exception.getMessage()).isEqualTo("Длина пароля должна находится"
+                + " в диапазоне [8, 32]");
     }
 
     @Test
@@ -34,7 +35,8 @@ class PasswordValidatorTest {
                 () -> {
                     PasswordValidator.validate("george washington");
                 });
-        assertThat(exception.getMessage()).isEqualTo("Пароль должен содержать хотя бы один символ в верхнем регистре");
+        assertThat(exception.getMessage()).isEqualTo("Пароль должен содержать хотя бы"
+                + " один символ в верхнем регистре");
     }
 
     @Test
@@ -44,7 +46,8 @@ class PasswordValidatorTest {
                 () -> {
                     PasswordValidator.validate("SUPER123");
                 });
-        assertThat(exception.getMessage()).isEqualTo("Пароль должен содержать хотя бы один символ в нижнем регистре");
+        assertThat(exception.getMessage()).isEqualTo("Пароль должен содержать"
+                + " хотя бы один символ в нижнем регистре");
     }
 
     @Test
@@ -54,7 +57,8 @@ class PasswordValidatorTest {
                 () -> {
                     PasswordValidator.validate("wtTFGHnbvgj");
                 });
-        assertThat(exception.getMessage()).isEqualTo("Пароль должен содержать хотя бы одну цифру");
+        assertThat(exception.getMessage()).isEqualTo("Пароль должен содержать"
+                + " хотя бы одну цифру");
     }
 
     @Test
@@ -64,7 +68,8 @@ class PasswordValidatorTest {
                 () -> {
                     PasswordValidator.validate("wtTFGH234nbvgj");
                 });
-        assertThat(exception.getMessage()).isEqualTo("Пароль должен содержать хотя бы один специальный символ");
+        assertThat(exception.getMessage()).isEqualTo("Пароль должен содержать"
+                + " хотя бы один специальный символ");
     }
 
     @Test
@@ -74,6 +79,7 @@ class PasswordValidatorTest {
                 () -> {
                     PasswordValidator.validate("qwerty!wtTFGH234nbvgj");
                 });
-        assertThat(exception.getMessage()).isEqualTo("Пароль не должен содержать подстроки: qwerty, 12345, password, admin, user");
+        assertThat(exception.getMessage()).isEqualTo("Пароль не должен содержать"
+                + " подстроки: qwerty, 12345, password, admin, user");
     }
 }
