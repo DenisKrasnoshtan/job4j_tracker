@@ -9,7 +9,7 @@ public class UsageMap {
         map.put("deniskras@gmail.com", "Denis Krasnoshtan");
         map.put("deniskras@yandex.ru", "Denis Krasnoshtan");
         map.put("deniskras@rambler.ru", "Denis Krasnoshtan");
-        for (Map.Entry<String, String> entry: map.entrySet()){
+        for (Map.Entry<String, String> entry: map.entrySet()) {
             String key = entry.getKey();
             String value = entry.getValue();
             System.out.println(key + " = " + value);

@@ -22,9 +22,9 @@ public class StartUITest {
         actions.add(new ExitAction(out));
         new StartUI(out).init(in, tracker, actions);
         assertThat(out.toString(), is(
-                "Menu:" + System.lineSeparator() +
-                        "0. Exit" + System.lineSeparator() +
-                        "=== Exit Program ===" + System.lineSeparator()
+                "Menu:" + System.lineSeparator()
+                        + "0. Exit" + System.lineSeparator()
+                        + "=== Exit Program ===" + System.lineSeparator()
         ));
     }
 

@@ -23,7 +23,8 @@ public class Error {
     public static void main(String[] args) {
         Error arithmeticException = new Error();
         arithmeticException.printInfo();
-        Error arrayIndexOutOfBoundsException = new Error(true, 1243, " ArrayIndexOutOfBoundsException");
+        Error arrayIndexOutOfBoundsException = new Error(true, 1243,
+                " ArrayIndexOutOfBoundsException");
         arrayIndexOutOfBoundsException.printInfo();
         Error classCastException = new Error(true, 2042, "ClassCastException");
         classCastException.printInfo();

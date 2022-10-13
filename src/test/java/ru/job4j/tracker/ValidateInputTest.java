@@ -17,6 +17,7 @@ public class ValidateInputTest {
         int selected = input.askInt("Enter menu:");
         assertThat(selected, is(1));
     }
+
     @Test
     public void whenValidInput() {
         Output out = new StubOutput();
@@ -27,6 +28,7 @@ public class ValidateInputTest {
         int selected = input.askInt("Enter menu:");
         assertThat(selected, is(1));
     }
+
     @Test
     public void whenMultipleValidInput() {
         Output out = new StubOutput();
@@ -39,6 +41,7 @@ public class ValidateInputTest {
         assertThat(selected1, is(1));
         assertThat(selected2, is(2));
     }
+
     @Test
     public void whenNegativeInvalidInput() {
         Output out = new StubOutput();

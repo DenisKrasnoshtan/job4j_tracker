@@ -3,8 +3,8 @@ package ru.job4j.tracker;
 import java.util.List;
 
 public class SingleTracker {
-    private final Tracker tracker = new Tracker();
     private static SingleTracker instance = null;
+    private final Tracker tracker = new Tracker();
 
     private SingleTracker() {
     }
