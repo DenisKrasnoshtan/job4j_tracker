@@ -16,8 +16,7 @@ public class PasswordValidator {
                     + " хотя бы один символ в верхнем регистре");
         }
         if (!isContainsLowerCaseChar(password)) {
-            throw new IllegalArgumentException("Пароль должен содержать"
-                    + " хотя бы один символ в нижнем регистре");
+            throw new IllegalArgumentException("Пароль должен содержать хотя бы один символ в нижнем регистре");
         }
         if (!isContainsDigitChar(password)) {
             throw new IllegalArgumentException("Пароль должен содержать хотя бы одну цифру");
