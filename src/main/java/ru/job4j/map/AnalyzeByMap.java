@@ -33,26 +33,17 @@ public class AnalyzeByMap {
     }
 
     public static List<Label> averageScoreBySubject(List<Pupil> pupils) {
-        double count = 0;
-        List<Label> labels = new ArrayList<>();
-        Map<String, Integer> map = new LinkedHashMap<>();
+        List<Label> label = new ArrayList<>();
+        Map<String, Integer> temp = new LinkedHashMap<>();
         for (Pupil pupil : pupils) {
-            count++;
             for (Subject subject : pupil.subjects()) {
-                if (map.containsKey(subject.name())) {
-                    map.put(subject.name(), subject.score() + map.get(subject.name()));
-                } else {
-                    map.put(subject.name(), subject.score());
-                }
+                temp.put(subject.name(), temp.getOrDefault(subject.name(), 0) + subject.score());
             }
         }
-        for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            String key = entry.getKey();
-            Integer value = entry.getValue();
-            labels.add(new Label(key, value / count));
+        for (String key : temp.keySet()) {
+            label.add(new Label(key, (double) temp.get(key) / pupils.size()));
         }
-        return labels;
-
+        return label;
     }
 
     public static Label bestStudent(List<Pupil> pupils) {
@@ -71,23 +62,17 @@ public class AnalyzeByMap {
     }
 
     public static Label bestSubject(List<Pupil> pupils) {
-        List<Label> labels = new ArrayList<>();
-        Map<String, Integer> map = new LinkedHashMap<>();
+        List<Label> label = new ArrayList<>();
+        Map<String, Integer> temp = new LinkedHashMap<>();
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                if (map.containsKey(subject.name())) {
-                    map.put(subject.name(), subject.score() + map.get(subject.name()));
-                } else {
-                    map.put(subject.name(), subject.score());
-                }
+                temp.put(subject.name(), temp.getOrDefault(subject.name(), 0) + subject.score());
             }
         }
-        for (Map.Entry<String, Integer> entry : map.entrySet()) {
-            String key = entry.getKey();
-            Integer value = entry.getValue();
-            labels.add(new Label(key, value));
+        for (String key : temp.keySet()) {
+            label.add(new Label(key, (double) temp.get(key)));
         }
-        labels.sort(Comparator.naturalOrder());
-        return labels.get(labels.size() - 1);
+        label.sort(Comparator.naturalOrder());
+        return label.get(label.size() - 1);
     }
 }
