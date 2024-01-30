@@ -7,8 +7,8 @@ import java.util.function.Function;
 public class FunctionCalculator {
     public List<Double> diapason(int start, int end, Function<Double, Double> function) {
         List<Double> ans = new ArrayList<>();
-        for (int i = 0; i < (end - start); i++) {
-            ans.add(function.apply((double) start + i));
+        for (int i = start; i < end; i++) {
+            ans.add(function.apply((double) i));
         }
         return ans;
     }
