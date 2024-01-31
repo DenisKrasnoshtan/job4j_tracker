@@ -21,7 +21,7 @@ public class Label {
     }
 
     public float getPrice() {
-        return price;
+        return this.price;
     }
 
     public void setPrice(float price) {
