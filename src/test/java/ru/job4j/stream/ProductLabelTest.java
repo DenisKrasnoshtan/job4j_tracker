@@ -26,7 +26,7 @@ public class ProductLabelTest {
         ProductLabel generator = new ProductLabel();
         List<String> strings = generator.generateLabels(products);
         List<String> expected = Arrays.asList(one.toString(),
-                two.toString(),three.toString(), four.toString());
+                two.toString(), three.toString(), four.toString());
         assertThat(strings).hasSameElementsAs(expected);
     }
 }
